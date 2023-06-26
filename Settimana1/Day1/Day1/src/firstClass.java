@@ -27,6 +27,24 @@ public class firstClass {
 	    
 	    //Esercizio 3
 	    concatenazioneStringhe();
+	    
+	    //Esercizio 4
+	    
+	    //Parte 1
+	    double lunghezzaLato1 = 5.2;
+        double lunghezzaLato2 = 3.8;
+
+        double perimetro = perimetroRettangolo(lunghezzaLato1, lunghezzaLato2);
+
+        System.out.println("Il perimetro del rettangolo è: " + perimetro);
+        
+        //Parte 2
+        int numero = 7;
+
+        int risultato = pariDispari(numero);
+
+        System.out.println("Il numero " + numero + " è " + (risultato == 0 ? "pari" : "dispari"));
+	    
 	}
 	
 	//FUNZIONI
@@ -82,5 +100,20 @@ public class firstClass {
 
         scanner.close();
     }
-		
+    
+    //FUNZIONE PERIMETRO RETTANGOLO
+        public static double perimetroRettangolo(double lato1, double lato2) {
+            double perimetro = 2 * (lato1 + lato2);
+            return perimetro;
+        }
+       
+    //FUNZIONE PARI / DISPARI
+        public static int pariDispari(int numero) {
+            if (numero % 2 == 0) {
+                return 0; // Il numero è pari
+            } else {
+                return 1; // Il numero è dispari
+            }
+    }
 }
+
