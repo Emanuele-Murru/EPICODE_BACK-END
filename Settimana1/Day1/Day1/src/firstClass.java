@@ -44,6 +44,15 @@ public class firstClass {
         int risultato = pariDispari(numero);
 
         System.out.println("Il numero " + numero + " è " + (risultato == 0 ? "pari" : "dispari"));
+        
+        //Parte 3
+        double lato1 = 3.4;
+        double lato2 = 5.1;
+        double lato3 = 4.2;
+
+        double area = areaTriangolo(lato1, lato2, lato3);
+
+        System.out.println("L'area del triangolo è: " + area);
 	    
 	}
 	
@@ -115,5 +124,12 @@ public class firstClass {
                 return 1; // Il numero è dispari
             }
     }
+        
+   //FUNZIONE PERIMETRO TRIANGOLO
+        public static double areaTriangolo(double lato1, double lato2, double lato3) {
+            double semiperimetro = (lato1 + lato2 + lato3) / 2;
+            double area = Math.sqrt(semiperimetro * (semiperimetro - lato1) * (semiperimetro - lato2) * (semiperimetro - lato3));
+            return area;
+        }
 }
 
