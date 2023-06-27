@@ -119,9 +119,9 @@ public class firstClass {
     //FUNZIONE PARI / DISPARI
         public static int pariDispari(int numero) {
             if (numero % 2 == 0) {
-                return 0; // Il numero è pari
+                return 0;
             } else {
-                return 1; // Il numero è dispari
+                return 1;
             }
     }
         
@@ -132,4 +132,3 @@ public class firstClass {
             return area;
         }
 }
-
