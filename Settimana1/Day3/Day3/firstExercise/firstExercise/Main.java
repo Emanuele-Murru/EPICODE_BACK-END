@@ -6,9 +6,16 @@ public class Main {
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
+		
 		System.out.println("Inserisci una frase");
 		String phrase = input.nextLine();
 		stringaPariDispari(phrase);
+		
+		System.out.println("Inserisci anno");
+		int year = input.nextInt();
+		input.nextLine();
+		isAnnoBisestile(year);
+		
 		input.close();
 	}
 
@@ -19,20 +26,22 @@ public class Main {
 			System.out.println(false);
 		}
 	}
-
-//	public static boolean isAnnoBisestile(int anno) {
-//	    return anno % 400 == 0 ? true : (anno % 100 == 0 ? false : (anno % 4 == 0 ? true : false));
+	
+	//Funzione fatta con ternario
+//	public static boolean isAnnoBisestile(int year) {
+//	    return year % 400 == 0 ? true : (year % 100 == 0 ? false : (year % 4 == 0 ? true : false));
 //	}
 
-	public static boolean isAnnoBisestile(int anno) {
-	    if (anno % 400 == 0) {
-	        return true;
-	    } else if (anno % 100 == 0) {
-	        return false;
-	    } else if (anno % 4 == 0) {
-	        return true;
+	//Funzione fatta con if / else if
+	public static void isAnnoBisestile(int year) {
+	    if (year % 400 == 0) {
+	        System.out.println(true);
+	    } else if (year % 100 == 0) {
+	        System.out.println(false);
+	    } else if (year % 4 == 0) {
+	        System.out.println(true);
 	    } else {
-	        return false;
+	        System.out.println(false);
 	    }
 	}
 
