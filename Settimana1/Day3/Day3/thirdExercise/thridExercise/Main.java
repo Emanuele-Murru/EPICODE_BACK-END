@@ -14,14 +14,14 @@ public class Main {
 			input = scanner.nextLine();
 
 			if (!input.equals(":q")) {
-				suddividiStringa(input);
+				suddividiInCaratteri(input);
 			}
 		} while (!input.equals(":q"));
 
 		scanner.close();
 	}
 
-	public static void suddividiStringa(String input) {
+	public static void suddividiInCaratteri(String input) {
 		
 		String[] caratteri = input.split("");
 		StringBuilder risultato = new StringBuilder();
