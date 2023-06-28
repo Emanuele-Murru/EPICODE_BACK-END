@@ -1,11 +1,11 @@
 package Exercise2;
 
 public class Sim {
-	
+
 	int numeroCell;
 	double credito;
 	String[] listaChiamate;
-	
+
 	public Sim(int _numeroCell) {
 		this.numeroCell = _numeroCell;
 		this.numeroCell = 0;
@@ -18,4 +18,4 @@ public class Sim {
 		System.out.println("Chiamate effettuate di recente: ");
 	}
 	
-}
+	}
