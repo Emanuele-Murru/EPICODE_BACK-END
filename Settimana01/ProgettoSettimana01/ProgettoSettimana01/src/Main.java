@@ -58,17 +58,88 @@ public class Main {
 				break;
 
 			default:
+				
 				System.out.println("Genere non valido!! Scegli tra i generi 1 - 2 - 3.");
 				i--;
 				
-				System.out.println(" \n ------------------------------------------------------");
+				System.out.println(" \n ------------------------------------------------------ \n");
 
 				break;
 			}
-
+				
 		}
+		
+		int decisione;
+		
+		do {
+			
+			System.out.println("Decidi quale file multimediale eseguire (1- " + files.length + ")");
+			
+			decisione = Integer.parseInt(input.nextLine());
+			
+			if (decisione >= 1 && decisione <= files.length) {
+				Multimedia file = files[decisione - 1];
+				if (file instanceof Riproduci) {
+					((Riproduci) file).play();
+				} else if (file instanceof Immagini) {
+					((Immagini) file).show();
+				}
+
+				System.out.println(
+						"Vuoi aumentare o abbassare la luminosità o il volume? (1 = Aumenta luminosità, 2 = Abbassa luminosità, 3 = Aumenta volume, 4 = Abbassa volume, 5 = Esci)");
+				int opzione = Integer.parseInt(input.nextLine());
+				switch (opzione) {
+				case 1:
+					if (file instanceof Video) {
+						((Video) file).aumentaLuminosita();
+					} else if (file instanceof Immagini) {
+						((Immagini) file).aumentaLuminosita();
+					}
+					break;
+				case 2:
+					if (file instanceof Video) {
+						((Video) file).diminuisciLuminosita();
+					} else if (file instanceof Immagini) {
+						((Immagini) file).diminuisciLuminosita();
+					}
+					break;
+				case 3:
+					if (file instanceof Video) {
+						((Video) file).alzaVolume();
+					} else if (file instanceof Audio) {
+						((Audio) file).alzaVolume();
+					}
+					break;
+					
+				case 4:
+					
+					if (file instanceof Video) {
+						((Video) file).abbassaVolume();
+					} else if (file instanceof Audio) {
+						((Audio) file).abbassaVolume();
+					}
+					
+					break;
+					
+				case 5:
+					break;
+					
+				default:
+					
+					System.out.println("Opzione non valida. Riprova.");
+					
+					break;
+				}
+			
+		} else if(decisione != 0) {
+			
+			System.out.println("Decisione non valida. Inserisci ");
+			
+		}
+			
+		} while (decisione != 0);
 
 		input.close();
-	}
 
+	}
 }
