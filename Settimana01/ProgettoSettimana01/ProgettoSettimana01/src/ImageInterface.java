@@ -1,5 +1,5 @@
 
-public interface Luminosita {
+public interface ImageInterface {
 	
 	public void aumentaLuminosita();
 	

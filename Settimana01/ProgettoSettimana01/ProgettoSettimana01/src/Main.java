@@ -8,6 +8,7 @@ public class Main {
 		Multimedia[] files = new Multimedia[5];
 
 		for (int i = 0; i < files.length; i++) {
+			
 			System.out.println("Inserisci il titolo del file " + (i + 1) + ":");
 			String title = input.nextLine();
 			System.out.println("Inserisci il genere di file: \n 1)Audio; \n 2)Immagine; \n 3)Video;");
@@ -78,37 +79,52 @@ public class Main {
 			decisione = Integer.parseInt(input.nextLine());
 			
 			if (decisione >= 1 && decisione <= files.length) {
+				
 				Multimedia file = files[decisione - 1];
+				
 				if (file instanceof Riproduci) {
+					
 					((Riproduci) file).play();
+					
 				} else if (file instanceof Immagini) {
+					
 					((Immagini) file).show();
 				}
 
-				System.out.println(
-						"Vuoi aumentare o abbassare la luminosità o il volume? (1 = Aumenta luminosità, 2 = Abbassa luminosità, 3 = Aumenta volume, 4 = Abbassa volume, 5 = Esci)");
+				System.out.println("Vuoi aumentare o abbassare la luminosità o il volume? \n 1)Aumenta luminosità, \n 2)Diminuisci luminosità, \n 3)Aumenta volume, \n 4)Abbassa volume, \n 5)Esci)");
+				
 				int opzione = Integer.parseInt(input.nextLine());
+				
 				switch (opzione) {
+				
 				case 1:
+					
 					if (file instanceof Video) {
 						((Video) file).aumentaLuminosita();
 					} else if (file instanceof Immagini) {
 						((Immagini) file).aumentaLuminosita();
 					}
+					
 					break;
+					
 				case 2:
+					
 					if (file instanceof Video) {
 						((Video) file).diminuisciLuminosita();
 					} else if (file instanceof Immagini) {
 						((Immagini) file).diminuisciLuminosita();
 					}
+					
 					break;
+					
 				case 3:
+					
 					if (file instanceof Video) {
 						((Video) file).alzaVolume();
 					} else if (file instanceof Audio) {
 						((Audio) file).alzaVolume();
 					}
+					
 					break;
 					
 				case 4:
@@ -119,9 +135,6 @@ public class Main {
 						((Audio) file).abbassaVolume();
 					}
 					
-					break;
-					
-				case 5:
 					break;
 					
 				default:

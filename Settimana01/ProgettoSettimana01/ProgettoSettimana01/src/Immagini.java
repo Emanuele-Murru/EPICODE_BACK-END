@@ -1,5 +1,5 @@
 
-public class Immagini extends Multimedia implements Luminosita {
+public class Immagini extends Multimedia implements ImageInterface {
 
 	private int luminosita;
 	
