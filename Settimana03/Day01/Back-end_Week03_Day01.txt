@@ -1,0 +1,29 @@
+
+1) ESERCIZIO
+
+SELECT nome, cognome, data_nascita FROM clienti
+WHERE EXTRACT (YEAR FROM data_nascita) = 1982; 
+
+======================================================
+
+2) ESERCIZIO
+
+SELECT numero_fattura FROM fatture
+WHERE iva = 20 
+
+==========================================================
+
+3) ESERCIZIO
+
+SELECT EXTRACT(YEAR FROM data_fattura) AS anno_fatturazione, COUNT(*) AS numero_fatture, SUM(importo) AS somma_importi
+FROM fatture
+GROUP BY EXTRACT(YEAR FROM data_fattura)
+ORDER BY anno_fatturazione
+
+=======================================================================
+
+4) ESERCIZIO
+
+
+SELECT * FROM Prodotti
+WHERE EXTRACT(YEAR FROM data_attivazione) = 2017 AND (in_produzione = true OR in_commercio = true)
