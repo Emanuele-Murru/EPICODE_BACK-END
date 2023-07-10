@@ -24,6 +24,35 @@ ORDER BY anno_fatturazione
 
 4) ESERCIZIO
 
-
-SELECT * FROM Prodotti
+SELECT * FROM prodotti
 WHERE EXTRACT(YEAR FROM data_attivazione) = 2017 AND (in_produzione = true OR in_commercio = true)
+
+==========================================================================
+
+5) ESERCIZIO
+
+SELECT EXTRACT(YEAR FROM data_fattura) AS anno_fatturazione, COUNT(*) AS numero_fatture FROM fatture
+WHERE iva = 20
+GROUP BY EXTRACT(YEAR FROM data_fattura)
+ORDER BY anno_fatturazione
+
+=======================================================================
+
+6) ESERCIZIO
+
+
+=======================================================================
+
+7) ESERCIZIO
+
+=======================================================================
+
+8) ESERCIZIO
+
+=======================================================================
+
+9) ESERCIZIO
+
+=======================================================================
+
+10) ESERCIZIO
