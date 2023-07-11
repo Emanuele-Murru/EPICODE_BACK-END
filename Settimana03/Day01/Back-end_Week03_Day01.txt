@@ -41,18 +41,39 @@ ORDER BY anno_fatturazione
 6) ESERCIZIO
 
 
+SELECT numero_fattura, importo, iva, data_fattura, denominazione, regione_residenza
+FROM fatture
+Join fornitori ON fornitori.numero_fornitore = fatture.numero_fornitore
+
 =======================================================================
 
 7) ESERCIZIO
+
+SELECT regione_residenza FROM fatture
+JOIN clienti ON id_cliente=numero_cliente
+GROUP BY regione_residenza
+
 
 =======================================================================
 
 8) ESERCIZIO
 
+SELECT SUM(importo) AS totale_importi, regione_residenza AS regione
+FROM fatture f
+JOIN clienti c ON f.id._cliente=c.numero_cliente
+GROUP BY c.regione_residenza
+
 =======================================================================
 
 9) ESERCIZIO
 
+SELECT * FROM fatture
+WHERE id_cliente IN(SELECT numero_cliente FROM clienti WHERE EXTRACT(YEAR FROM data_nascita) = 1980) AND importo > 50
+
+
+
 =======================================================================
 
 10) ESERCIZIO
+
+SELECT  CONCAT(nome, '-', cognome) AS denominazione FROM clienti WHERE regione_residenza = 'Lombardia'
